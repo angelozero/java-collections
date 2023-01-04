@@ -15,17 +15,20 @@ public class GenerateUserList {
 
     protected static List<User> execute() {
         User user1 = User.builder()
-                .name("Jake-" + RandomStringUtils.randomAlphabetic(getRandomNumber()))
+                .name("Jake")
+                .randomCode(RandomStringUtils.randomAlphabetic(getRandomNumber()))
                 .points(getRandomNumber())
                 .build();
 
         User user2 = User.builder()
-                .name("Angelo-" + RandomStringUtils.randomAlphabetic(getRandomNumber()))
+                .name("Angelo")
+                .randomCode(RandomStringUtils.randomAlphabetic(getRandomNumber()))
                 .points(getRandomNumber())
                 .build();
 
         User user3 = User.builder()
-                .name("Floki-" + RandomStringUtils.randomAlphabetic(getRandomNumber()))
+                .name("Floki")
+                .randomCode(RandomStringUtils.randomAlphabetic(getRandomNumber()))
                 .points(getRandomNumber())
                 .build();
 
