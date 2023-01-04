@@ -340,3 +340,5 @@ README.html
 *.iml
 .idea
 .exercism
+
+.mvn
