@@ -154,6 +154,7 @@
 - The logic behind
 
 ```java
+@Service
 public class GetConsolidatedInformation {
 
     public MasterStore execute() {
