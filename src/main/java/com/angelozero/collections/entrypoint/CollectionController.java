@@ -1,9 +1,6 @@
 package com.angelozero.collections.entrypoint;
 
-import com.angelozero.collections.service.Collection01;
-import com.angelozero.collections.service.Collection02;
-import com.angelozero.collections.service.Lambda01;
-import com.angelozero.collections.service.Lambda02;
+import com.angelozero.collections.service.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
@@ -16,30 +13,37 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class CollectionController {
 
-    private final Collection01 service1;
-    private final Collection02 service2;
-    private final Lambda01 service3;
-    private final Lambda02 service4;
+    private final Collection01 forService;
+    private final Collection02 forEachService;
+    private final Lambda01 customFunctionalInterfaceService;
+    private final Lambda02 removeIfService;
+    private final Comparator01 comparatorSortedListService;
 
     @GetMapping("/for")
     public String getFor() {
-        return generateJsonResponse(service1.execute());
+        return generateJsonResponse(forService.execute());
     }
 
     @GetMapping("/for-each")
     public String getForEach() {
-        return generateJsonResponse(service2.execute());
+        return generateJsonResponse(forEachService.execute());
     }
 
     @GetMapping("/custom-functional-interface")
     public String getCustomFunctionalInterface(@PathParam("name") String name) {
-        return generateJsonResponse(service3.execute(name));
+        return generateJsonResponse(customFunctionalInterfaceService.execute(name));
     }
 
     @GetMapping("/remove-if")
     public String getCustomFunctionalInterface() {
-        return generateJsonResponse(service4.execute());
+        return generateJsonResponse(removeIfService.execute());
     }
+
+    @GetMapping("/comparator-sorted-list")
+    public String getSortedListUsingComparator() {
+        return generateJsonResponse(comparatorSortedListService.execute());
+    }
+
 
     private String generateJsonResponse(Object obj) {
 

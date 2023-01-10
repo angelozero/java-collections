@@ -15,20 +15,22 @@ public class Comparator01 {
 
         List<User> users = GenerateUserList.execute();
 
-//        Comparator<User> comparator = new Comparator<User>() {
-//            @Override
-//            public int compare(User userA, User userB) {
-//                return userA.getName().compareTo(userB.getName());
-//            }
-//        };
-
-//        Comparator<User> comparator =
-//                (userA, userB) -> userA.getName().compareTo(userB.getName());
-
-//        Collections.sort(users, comparator);
-
-
-//        Collections.sort(users, (userA, userB) -> userA.getName().compareTo(userB.getName()));
+        /**
+         *  Comparator<User> comparator = new Comparator<User>() {
+         *             @Override
+         *             public int compare(User userA, User userB) {
+         *                 return userA.getName().compareTo(userB.getName());
+         *             }
+         *         };
+         *
+         *         Comparator<User> comparator =
+         *                 (userA, userB) -> userA.getName().compareTo(userB.getName());
+         *
+         *         Collections.sort(users, comparator);
+         *
+         *
+         *         Collections.sort(users, (userA, userB) -> userA.getName().compareTo(userB.getName()));
+         */
 
         users.sort(Comparator.comparing(User::getName));
 
