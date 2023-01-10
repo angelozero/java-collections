@@ -1,6 +1,7 @@
 package com.angelozero.collections.service;
 
 import com.angelozero.collections.domain.User;
+import com.angelozero.collections.service.util.GenerateUserList;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

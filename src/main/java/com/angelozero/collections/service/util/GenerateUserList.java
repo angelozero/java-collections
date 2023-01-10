@@ -1,4 +1,4 @@
-package com.angelozero.collections.service;
+package com.angelozero.collections.service.util;
 
 import com.angelozero.collections.domain.User;
 import lombok.AllArgsConstructor;
