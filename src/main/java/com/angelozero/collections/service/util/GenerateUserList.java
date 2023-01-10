@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 @AllArgsConstructor
 public class GenerateUserList {
 
-    protected static List<User> execute() {
+    public static List<User> execute() {
         User user1 = User.builder()
                 .name("Jake")
                 .randomCode(RandomStringUtils.randomAlphabetic(getRandomNumber()))

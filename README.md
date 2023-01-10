@@ -57,3 +57,12 @@ public static int maximum(int[] numbers) {
 Comparator<User> comparator = Comparator.comparing(u -> u.getNome()); usuarios.sort(comparator);
 ```
 - Ele retorna um ```Comparator``` que usará a String do nome de usuário como critério de comparação.
+
+**Natural Order**
+- ```Comparator.naturalOrder()``` retorna um Comparator que delega para o próprio objeto. Há também o ```Comparator.reverseOrder()```.
+```java
+List<String> words = Arrays.asList("Spain", "Brazil", "Japan");
+words.sort(Comparator.naturalOrder());
+```
+---
+**aonde parei ? - Capítulo 6 Method References pág. 40**

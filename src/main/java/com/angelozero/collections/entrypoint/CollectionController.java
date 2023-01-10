@@ -17,7 +17,9 @@ public class CollectionController {
     private final Collection02 forEachService;
     private final Lambda01 customFunctionalInterfaceService;
     private final Lambda02 removeIfService;
-    private final Comparator01 comparatorSortedListService;
+    private final Comparator01 comparatorSortedListByNameService;
+    private final Comparator02 comparatorSortedListByPointsService;
+    private final Comparator03 naturalOrderService;
 
     @GetMapping("/for")
     public String getFor() {
@@ -39,11 +41,20 @@ public class CollectionController {
         return generateJsonResponse(removeIfService.execute());
     }
 
-    @GetMapping("/comparator-sorted-list")
-    public String getSortedListUsingComparator() {
-        return generateJsonResponse(comparatorSortedListService.execute());
+    @GetMapping("/comparator-sorted-list-by-names")
+    public String getSortedListByNamesUsingComparator() {
+        return generateJsonResponse(comparatorSortedListByNameService.execute());
     }
 
+    @GetMapping("/comparator-sorted-list-by-points")
+    public String getSortedListByPointsUsingComparator() {
+        return generateJsonResponse(comparatorSortedListByPointsService.execute());
+    }
+
+    @GetMapping("/comparator-natural-order")
+    public String getSortedStringListUsingComparatorNaturalOrder() {
+        return generateJsonResponse(naturalOrderService.execute());
+    }
 
     private String generateJsonResponse(Object obj) {
 
