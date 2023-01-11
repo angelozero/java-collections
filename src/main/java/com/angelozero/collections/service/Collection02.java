@@ -12,7 +12,6 @@ import java.util.function.Consumer;
 @AllArgsConstructor
 public class Collection02 {
 
-
     public List<User> execute() {
 
         List<User> users = GenerateUserList.execute();
@@ -32,7 +31,9 @@ public class Collection02 {
 
         // 03
         Consumer<User> showName3 =
-                (User u) -> {System.out.println(u.getName());};
+                (User u) -> {
+                    System.out.println(u.getName());
+                };
         users.forEach(showName3);
         System.out.println("\n");
 
