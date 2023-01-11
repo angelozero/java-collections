@@ -1,4 +1,5 @@
 # Java 8
+![collections](https://i.postimg.cc/tRdKP7xb/collections-java.png)
 
 ## Ordenando no Java 8
 **Interface Comparator**
