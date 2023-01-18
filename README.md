@@ -1,12 +1,14 @@
 # Java 8
+
 ![collections](https://i.postimg.cc/tRdKP7xb/collections-java.png)
 
 ## Laços em Java
 
 **For**
+
 - O laço ```for``` é recomendado para ser usado quando temos um número fixo de iterações necessárias para o loop.
 
-```java
+```javascript
 for ( inicialização da variável; condição; alteração da variável ) {  
        [ comando ]
 }
@@ -16,11 +18,14 @@ for(int count=10 ; count >= 1; count--){
     System.out.println(count);
 }
 ```
+
 ---
 **For-each**
-- ```for-each``` pode ser traduzido como “para cada”. É um laço For que busca uma correspondência pré-determinada para funcionar.
 
-```java
+- ```for-each``` pode ser traduzido como “para cada”. É um laço For que busca uma correspondência pré-determinada para
+  funcionar.
+
+```javascript
 for ( tipo da variável: array ) 
 { 
     comandos usando a variável;
@@ -49,20 +54,40 @@ public static int maximum(int[] numbers) {
 ```
 
 ## Ordenando no Java 8
-**Interface Comparator**
-- Além de poder ter métodos default dentro de uma interface, agora podemos ter métodos estáticos. A interface Comparator possui alguns deles.
 
-- O nosso ```user.sort(...)``` pode ficar ainda mais curto, com o auxílio do ```Comparator.comparing(...)```, que é uma **fábrica (*factory*)** de Comparators.
-```java
+**Interface Comparator**
+
+- Além de poder ter métodos default dentro de uma interface, agora podemos ter métodos estáticos. A interface Comparator
+  possui alguns deles.
+
+- O nosso ```user.sort(...)``` pode ficar ainda mais curto, com o auxílio do ```Comparator.comparing(...)```, que é
+  uma **fábrica (*factory*)** de Comparators.
+
+```javascript
 Comparator<User> comparator = Comparator.comparing(u -> u.getNome()); usuarios.sort(comparator);
 ```
+
 - Ele retorna um ```Comparator``` que usará a String do nome de usuário como critério de comparação.
 
 **Natural Order**
-- ```Comparator.naturalOrder()``` retorna um Comparator que delega para o próprio objeto. Há também o ```Comparator.reverseOrder()```.
-```java
+
+- ```Comparator.naturalOrder()``` retorna um Comparator que delega para o próprio objeto. Há também
+  o ```Comparator.reverseOrder()```.
+
+```javascript
 List<String> words = Arrays.asList("Spain", "Brazil", "Japan");
 words.sort(Comparator.naturalOrder());
 ```
+
 ---
-**aonde parei ? - Capítulo 6 Method References pág. 40**
+
+## Method References
+
+- A sintaxe é bem simples
+
+```javascript
+users.forEach(User::turnModerator);
+```
+
+- O method reference (```User::turnModerator```) é traduzido para uma interface funcional. Aqui não há reflection sendo utilizada, tudo é resolvido em tempo de compilação, sem custos de overhead para a
+  performance.

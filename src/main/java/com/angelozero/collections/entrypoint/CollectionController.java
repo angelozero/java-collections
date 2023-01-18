@@ -20,6 +20,7 @@ public class CollectionController {
     private final Comparator01 comparatorSortedListByNameService;
     private final Comparator02 comparatorSortedListByPointsService;
     private final Comparator03 naturalOrderService;
+    private final MethodReferences01 setAdminAllUsersService;
 
     @GetMapping("/for")
     public String getFor() {
@@ -54,6 +55,11 @@ public class CollectionController {
     @GetMapping("/comparator-natural-order")
     public String getSortedStringListUsingComparatorNaturalOrder() {
         return generateJsonResponse(naturalOrderService.execute());
+    }
+
+    @GetMapping("/method-reference-set-all-as-admin")
+    public String methodReferenceSetAllUsersAsAdmin() {
+        return generateJsonResponse(setAdminAllUsersService.execute(false));
     }
 
     private String generateJsonResponse(Object obj) {

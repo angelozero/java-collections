@@ -10,4 +10,8 @@ public class User {
     private String randomCode;
     private int points;
     private boolean moderator;
+
+    public void beAdmin() {
+        this.moderator = !this.moderator;
+    }
 }

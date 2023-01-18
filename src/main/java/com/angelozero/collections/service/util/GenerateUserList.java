@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
@@ -14,22 +15,36 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GenerateUserList {
 
     public static List<User> execute() {
+        return generateUsers(false);
+    }
+
+    public static List<User> execute(boolean isAdmin) {
+        return generateUsers(isAdmin);
+    }
+
+    private static List<User> generateUsers(boolean isAdmin) {
+
+        boolean moderator = isAdmin || new Random().nextBoolean();
+
         User user1 = User.builder()
                 .name("Jake")
                 .randomCode(RandomStringUtils.randomAlphabetic(getRandomNumber()))
                 .points(getRandomNumber())
+                .moderator(moderator)
                 .build();
 
         User user2 = User.builder()
                 .name("Angelo")
                 .randomCode(RandomStringUtils.randomAlphabetic(getRandomNumber()))
                 .points(getRandomNumber())
+                .moderator(moderator)
                 .build();
 
         User user3 = User.builder()
                 .name("Floki")
                 .randomCode(RandomStringUtils.randomAlphabetic(getRandomNumber()))
                 .points(getRandomNumber())
+                .moderator(moderator)
                 .build();
 
         return Arrays.asList(user1, user2, user3);
