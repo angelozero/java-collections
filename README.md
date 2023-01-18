@@ -91,3 +91,29 @@ users.forEach(User::turnModerator);
 
 - O method reference (```User::turnModerator```) é traduzido para uma interface funcional. Aqui não há reflection sendo utilizada, tudo é resolvido em tempo de compilação, sem custos de overhead para a
   performance.
+
+- Para Referenciar construtores podemos usar da seguinte maneira
+
+```javascript
+public User execute() {
+
+    Supplier<User> createNewUser = User::new;
+
+    return createNewUser.get();
+}
+```
+
+- Para referenciar um construtor passando mais de uma parametro podemos criar uma interface funcional ou usar a ja existente biFunction
+
+```javascript
+public User execute() {
+
+    BiFunction<String, Integer, User> createNewUser = User::new;
+
+    return createNewUser.apply("Angelo - Supplier Bi Function", 10);
+
+}
+```
+
+
+**aonde parei ---> Capítulo 7 Streams e Collectors pág. 50**

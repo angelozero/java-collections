@@ -21,6 +21,11 @@ public class CollectionController {
     private final Comparator02 comparatorSortedListByPointsService;
     private final Comparator03 naturalOrderService;
     private final MethodReferences01 setAdminAllUsersService;
+    private final MethodReferences02 nullLastService;
+    private final MethodReferences03 nullFirstService;
+    private final Supplier01 methodReferenceConstructorService;
+    private final Supplier02 methodReferenceConstructorParameterService;
+    private final Supplier03 methodReferenceConstructorParameterBiFunctionService;
 
     @GetMapping("/for")
     public String getFor() {
@@ -61,6 +66,32 @@ public class CollectionController {
     public String methodReferenceSetAllUsersAsAdmin() {
         return generateJsonResponse(setAdminAllUsersService.execute(false));
     }
+
+    @GetMapping("/method-reference-null-last")
+    public String methodReferenceNullLast() {
+        return generateJsonResponse(nullLastService.execute());
+    }
+
+    @GetMapping("/method-reference-null-first")
+    public String methodReferenceNullFirst() {
+        return generateJsonResponse(nullFirstService.execute());
+    }
+
+    @GetMapping("/method-reference-constructor")
+    public String methodReferenceConstructor() {
+        return generateJsonResponse(methodReferenceConstructorService.execute());
+    }
+
+    @GetMapping("/method-reference-constructor-parameter")
+    public String methodReferenceConstructorParameter() {
+        return generateJsonResponse(methodReferenceConstructorParameterService.execute());
+    }
+
+    @GetMapping("/method-reference-constructor-parameter-bi-function")
+    public String methodReferenceConstructorParameterBiFunction() {
+        return generateJsonResponse(methodReferenceConstructorParameterBiFunctionService.execute());
+    }
+
 
     private String generateJsonResponse(Object obj) {
 
