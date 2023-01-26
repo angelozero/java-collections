@@ -114,6 +114,12 @@ public User execute() {
 
 }
 ```
+---
 
+## Streams
 
-**aonde parei ---> Capítulo 7 Streams e Collectors pág. 50**
+- Stream nunca guarda dados. Ele não tem uma estrutura de dados interna para armazenar cada um dos elementos: ele, na verdade, usa uma coleção ou alguma outra categoria de fonte para trabalhar com os objetos e executar uma série de operações (um pipeline de operações). Ele está mais próximo a um Iterator. O Stream é uma sequência de elementos que pode ser trabalhada de diversas formas.
+
+```javascript
+return users.stream().filter(user -> user.getPoints() > 25).collect(Collectors.toList()); 
+```

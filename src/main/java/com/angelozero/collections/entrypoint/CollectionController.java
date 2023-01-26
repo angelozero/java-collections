@@ -26,6 +26,7 @@ public class CollectionController {
     private final Supplier01 methodReferenceConstructorService;
     private final Supplier02 methodReferenceConstructorParameterService;
     private final Supplier03 methodReferenceConstructorParameterBiFunctionService;
+    private final Stream01 streamFilterOnlyUsersWithMoreThan25Points;
 
     @GetMapping("/for")
     public String getFor() {
@@ -90,6 +91,11 @@ public class CollectionController {
     @GetMapping("/method-reference-constructor-parameter-bi-function")
     public String methodReferenceConstructorParameterBiFunction() {
         return generateJsonResponse(methodReferenceConstructorParameterBiFunctionService.execute());
+    }
+
+    @GetMapping("/stream-and-filter")
+    public String streamAndFilter() {
+        return generateJsonResponse(streamFilterOnlyUsersWithMoreThan25Points.execute());
     }
 
 
