@@ -116,10 +116,21 @@ public User execute() {
 ```
 ---
 
-## Streams
+## Streams e Collectors
 
-- Stream nunca guarda dados. Ele não tem uma estrutura de dados interna para armazenar cada um dos elementos: ele, na verdade, usa uma coleção ou alguma outra categoria de fonte para trabalhar com os objetos e executar uma série de operações (um pipeline de operações). Ele está mais próximo a um Iterator. O Stream é uma sequência de elementos que pode ser trabalhada de diversas formas.
+- Stream nunca guarda dados. Ele não tem uma estrutura de dados interna para armazenar cada um dos elementos: ele, na verdade, usa uma coleção ou alguma outra categoria de fonte para trabalhar com os objetos e executar uma série de operações (um `pipeline` de operações). Ele está mais próximo a um Iterator. O Stream é uma sequência de elementos que pode ser trabalhada de diversas formas.
 
 ```javascript
 return users.stream().filter(user -> user.getPoints() > 25).collect(Collectors.toList()); 
 ```
+
+- Sobre Collectors
+
+```javascript
+<R> R collect(Supplier<R> supplier,
+  BiConsumer<R, ? super T> accumulator,
+  BiConsumer<R, R> combiner);
+```
+- A função recebe três argumentos. Os três são `interfaces` funcionais. O primeiro é uma factory que vai criar o objeto que será devolvido no final da coleta. O segundo é o método que será invocado para adicionar cada elemento. O terceiro pode ser invocado se precisarmos adicionar mais de um elemento em simultâneo (por exemplo, se formos usar uma estratégia de coletar elementos paralelamente, como veremos no futuro).
+
+**aonde parei ? -> 7.5 Avançado: por que não há um toList em Stream? pág 57**
