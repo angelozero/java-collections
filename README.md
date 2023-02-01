@@ -133,4 +133,4 @@ return users.stream().filter(user -> user.getPoints() > 25).collect(Collectors.t
 ```
 - A função recebe três argumentos. Os três são `interfaces` funcionais. O primeiro é uma factory que vai criar o objeto que será devolvido no final da coleta. O segundo é o método que será invocado para adicionar cada elemento. O terceiro pode ser invocado se precisarmos adicionar mais de um elemento em simultâneo (por exemplo, se formos usar uma estratégia de coletar elementos paralelamente, como veremos no futuro).
 
-**aonde parei ? -> 7.5 Avançado: por que não há um toList em Stream? pág 57**
+**aonde parei ? -> Capítulo 9 Mapeando, particionando, agrupando e paralelizando - pag 80**

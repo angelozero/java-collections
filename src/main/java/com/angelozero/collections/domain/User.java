@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 @Builder
 @Data
 @AllArgsConstructor
@@ -24,7 +27,18 @@ public class User {
         this.points = points;
     }
 
+    public User(int i) {
+        setPoints(i);
+        this.name = "[" + i + "] - Foo";
+        this.moderator = false;
+    }
+
+    private void setPoints(int points) {
+        this.points = points > 0 ? new Random().nextInt(0, points * 2) : 0;
+    }
+
     public void beAdmin() {
         this.moderator = !this.moderator;
     }
+
 }
