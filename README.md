@@ -134,3 +134,20 @@ return users.stream().filter(user -> user.getPoints() > 25).collect(Collectors.t
 - A função recebe três argumentos. Os três são `interfaces` funcionais. O primeiro é uma factory que vai criar o objeto que será devolvido no final da coleta. O segundo é o método que será invocado para adicionar cada elemento. O terceiro pode ser invocado se precisarmos adicionar mais de um elemento em simultâneo (por exemplo, se formos usar uma estratégia de coletar elementos paralelamente, como veremos no futuro).
 
 **aonde parei ? -> Capítulo 9 Mapeando, particionando, agrupando e paralelizando - pag 80**
+
+- FlatMap - Listando todos os arquivos na pasta service
+```javascript
+  Map<Path, Long> linesPerFile = new HashMap<>();
+  try {
+      list(Paths.get("src/main/java/com/angelozero/collections/service/"))
+              .filter(p -> p.toString().endsWith(".java"))
+              .forEach(p ->
+              {
+                  try {
+                      linesPerFile.put(p.getFileName(), lines(p).count());
+                  } catch (IOException e) {
+                      throw new RuntimeException(e);
+                  }
+              });
+      return linesPerFile;
+```
