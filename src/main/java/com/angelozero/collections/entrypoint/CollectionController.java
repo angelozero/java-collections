@@ -33,6 +33,7 @@ public class CollectionController {
     private final Stream04 streamReducePoints;
     private final Stream05 streamFlatmap;
     private final Stream06 streamFlatmapDistinct;
+    private final FlatMap01 flatMapGenerateMapWithProjectFilesService;
 
     @GetMapping(value = "/for", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getFor() {
@@ -129,6 +130,12 @@ public class CollectionController {
     public String streamListFlatmapDistinct() {
         return generateJsonResponse(streamFlatmapDistinct.execute());
     }
+
+    @GetMapping(value = "/flat-map-generate-map", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String flatMapGenerateMap() {
+        return generateJsonResponse(flatMapGenerateMapWithProjectFilesService.execute());
+    }
+
 
     private String generateJsonResponse(Object obj) {
         ObjectWriter objWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
