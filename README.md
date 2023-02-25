@@ -177,3 +177,5 @@ parallelStream em vez de Stream:
         // "Time without Parallel": "2.30 seconds"
 }
 ```
+
+![parallel](https://2.bp.blogspot.com/-6mu_XONMqYY/XD6INZpldiI/AAAAAAAANAU/s6_J24LaAIgCU5rfd0mvIsTuBqlntQCygCLcBGAs/w1200-h630-p-k-no-nu/stream_performance_Java8_collection.png)
