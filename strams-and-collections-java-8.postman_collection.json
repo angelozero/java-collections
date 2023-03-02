@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "bdf076e9-dc95-495a-8a3d-847d3867ffe4",
+		"name": "Collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12384551"
+	},
+	"item": [
+		{
+			"name": "01 - For",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/for",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"for"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02 - For Each",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/for-each",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"for-each"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03 - Custom Functional Interface",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/custom-functional-interface",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"custom-functional-interface"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04 - Remove If",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/remove-if",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"remove-if"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05 - Comparator Sorted List By Names",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comparator-sorted-list-by-names",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comparator-sorted-list-by-names"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06 - Comparator Sorted List By Points",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comparator-sorted-list-by-points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comparator-sorted-list-by-points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07 - Comparator Natural Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comparator-natural-order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comparator-natural-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08 - Method References Set All As Admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method-reference-set-all-as-admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method-reference-set-all-as-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "09 - Method References Null Last",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method-reference-null-last",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method-reference-null-last"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10 - Method References Null First",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method-reference-null-first",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method-reference-null-first"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11 - Method References Constructor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method-reference-constructor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method-reference-constructor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12 - Method References Constructor Parameter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method-reference-constructor-parameter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method-reference-constructor-parameter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13 - Method References Constructor Parameter Bi Function",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/method-reference-constructor-parameter-bi-function",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"method-reference-constructor-parameter-bi-function"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14 - Streams - Filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stream-and-filter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stream-and-filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15 - Streams - Sum",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stream-and-sum",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stream-and-sum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16 - Streams - Avarage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stream-and-avarage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stream-and-avarage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17 - Streams - Reduce",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stream-and-reduce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stream-and-reduce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18 - Streams - Flatmap",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stream-flatmap",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stream-flatmap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18 - Streams - Flatmap Distinct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stream-flatmap-distinct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stream-flatmap-distinct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18 - Streams - Flatmap Generate Map",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/flat-map-generate-map",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flat-map-generate-map"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19 - Parallel Pipeline",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parallel-pipeline",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parallel-pipeline"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19 - Parallel Pipeline Measure Time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/parallel-pipeline-measure-time",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parallel-pipeline-measure-time"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
