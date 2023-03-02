@@ -150,4 +150,11 @@ return users.stream().filter(user -> user.getPoints() > 25).collect(Collectors.t
       return linesPerFile;
 ```
 
-- Parallel Stream - aonde parei ---> 9.3 Executando o pipeline em paralelo
+## Parallel Stream
+
+- As collections oferecem uma implementação de Stream diferente, o stream paralelo. Ao usar um stream paralelo, ele vai decidir quantas threads deve utilizar, como
+deve quebrar o processamento dos dados e qual será a forma de unir o resultado final em um só. Tudo isso sem você ter de configurar nada. Basta apenas invocar
+parallelStream em vez de Stream:
+
+```javascript
+```
