@@ -37,7 +37,7 @@ public class GenerateUserList {
         User user1 = User.builder()
                 .name("Jake")
                 .randomCode(RandomStringUtils.randomAlphabetic(new Random().nextInt(0, 5)))
-                .points(new Random().nextInt(0, 5))
+                .points(new Random().nextInt(0, 100))
                 .moderator(moderator)
                 .build();
 

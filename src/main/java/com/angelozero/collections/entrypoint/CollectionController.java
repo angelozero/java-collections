@@ -34,6 +34,8 @@ public class CollectionController {
     private final Stream05 streamFlatmap;
     private final Stream06 streamFlatmapDistinct;
     private final FlatMap01 flatMapGenerateMapWithProjectFilesService;
+    private final ParallelPipeline01 parallelPipelineService;
+    private final ParallelPipeline02 parallelPipelineMeasureTimeService;
 
     @GetMapping(value = "/for", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getFor() {
@@ -136,6 +138,15 @@ public class CollectionController {
         return generateJsonResponse(flatMapGenerateMapWithProjectFilesService.execute());
     }
 
+    @GetMapping(value = "/parallel-pipeline", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String parallelPipeline() {
+        return generateJsonResponse(parallelPipelineService.execute());
+    }
+
+    @GetMapping(value = "/parallel-pipeline-measure-time", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String parallelPipelineMeasureTime() {
+        return generateJsonResponse(parallelPipelineMeasureTimeService.execute());
+    }
 
     private String generateJsonResponse(Object obj) {
         ObjectWriter objWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
