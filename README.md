@@ -157,4 +157,23 @@ deve quebrar o processamento dos dados e qual será a forma de unir o resultado 
 parallelStream em vez de Stream:
 
 ```javascript
+        double startTimeWithParallel = (double) System.nanoTime() / 1_000_000_000;
+        LongStream.range(0, 1_000_000_000)
+                .parallel()
+                .filter(x -> x % 2 == 0)
+                .sum();
+        double stopTimeWithParallel = (double) System.nanoTime() / 1_000_000_000;
+
+
+        double startTimeWithoutParallel = (double) System.nanoTime() / 1_000_000_000;
+        LongStream.range(0, 1_000_000_000)
+                .filter(x -> x % 2 == 0)
+                .sum();
+        double endTimeWithoutParallel = (double) System.nanoTime() / 1_000_000_000;
+
+
+        // this is just an example and will print 
+        // "Time with Parallel   ": "1.47 seconds",
+        // "Time without Parallel": "2.30 seconds"
+}
 ```
