@@ -39,121 +39,112 @@ public class CollectionController {
 
     @GetMapping(value = "/for", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getFor() {
-        return generateJsonResponse(forService.execute());
+        return GenerateJsonResponse.execute(forService.execute());
     }
 
     @GetMapping(value = "/for-each", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getForEach() {
-        return generateJsonResponse(forEachService.execute());
+        return GenerateJsonResponse.execute(forEachService.execute());
     }
 
     @GetMapping(value = "/custom-functional-interface", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getCustomFunctionalInterface(@PathParam("name") String name) {
-        return generateJsonResponse(customFunctionalInterfaceService.execute(name));
+        return GenerateJsonResponse.execute(customFunctionalInterfaceService.execute(name));
     }
 
     @GetMapping(value = "/remove-if", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getCustomFunctionalInterface() {
-        return generateJsonResponse(removeIfService.execute());
+        return GenerateJsonResponse.execute(removeIfService.execute());
     }
 
     @GetMapping(value = "/comparator-sorted-list-by-names", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getSortedListByNamesUsingComparator() {
-        return generateJsonResponse(comparatorSortedListByNameService.execute());
+        return GenerateJsonResponse.execute(comparatorSortedListByNameService.execute());
     }
 
     @GetMapping(value = "/comparator-sorted-list-by-points", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getSortedListByPointsUsingComparator() {
-        return generateJsonResponse(comparatorSortedListByPointsService.execute());
+        return GenerateJsonResponse.execute(comparatorSortedListByPointsService.execute());
     }
 
     @GetMapping(value = "/comparator-natural-order", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getSortedStringListUsingComparatorNaturalOrder() {
-        return generateJsonResponse(naturalOrderService.execute());
+        return GenerateJsonResponse.execute(naturalOrderService.execute());
     }
 
     @GetMapping(value = "/method-reference-set-all-as-admin", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceSetAllUsersAsAdmin() {
-        return generateJsonResponse(setAdminAllUsersService.execute(false));
+        return GenerateJsonResponse.execute(setAdminAllUsersService.execute(false));
     }
 
     @GetMapping(value = "/method-reference-null-last", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceNullLast() {
-        return generateJsonResponse(nullLastService.execute());
+        return GenerateJsonResponse.execute(nullLastService.execute());
     }
 
     @GetMapping(value = "/method-reference-null-first", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceNullFirst() {
-        return generateJsonResponse(nullFirstService.execute());
+        return GenerateJsonResponse.execute(nullFirstService.execute());
     }
 
     @GetMapping(value = "/method-reference-constructor", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceConstructor() {
-        return generateJsonResponse(methodReferenceConstructorService.execute());
+        return GenerateJsonResponse.execute(methodReferenceConstructorService.execute());
     }
 
     @GetMapping(value = "/method-reference-constructor-parameter", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceConstructorParameter() {
-        return generateJsonResponse(methodReferenceConstructorParameterService.execute());
+        return GenerateJsonResponse.execute(methodReferenceConstructorParameterService.execute());
     }
 
     @GetMapping(value = "/method-reference-constructor-parameter-bi-function", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceConstructorParameterBiFunction() {
-        return generateJsonResponse(methodReferenceConstructorParameterBiFunctionService.execute());
+        return GenerateJsonResponse.execute(methodReferenceConstructorParameterBiFunctionService.execute());
     }
 
     @GetMapping(value = "/stream-and-filter", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamAndFilter() {
-        return generateJsonResponse(streamFilterOnlyUsersWithMoreThan25Points.execute());
+        return GenerateJsonResponse.execute(streamFilterOnlyUsersWithMoreThan25Points.execute());
     }
 
     @GetMapping(value = "/stream-and-sum", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamAndSum() {
-        return generateJsonResponse(streamSumAllPoints.execute());
+        return GenerateJsonResponse.execute(streamSumAllPoints.execute());
     }
 
 
     @GetMapping(value = "/stream-and-avarage", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamAndAvarage() {
-        return generateJsonResponse(streamAvaragePoints.execute());
+        return GenerateJsonResponse.execute(streamAvaragePoints.execute());
     }
 
     @GetMapping(value = "/stream-and-reduce", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamAndReduce() {
-        return generateJsonResponse(streamReducePoints.execute());
+        return GenerateJsonResponse.execute(streamReducePoints.execute());
     }
 
     @GetMapping(value = "/stream-flatmap", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamListFlatmap() {
-        return generateJsonResponse(streamFlatmap.execute());
+        return GenerateJsonResponse.execute(streamFlatmap.execute());
     }
 
     @GetMapping(value = "/stream-flatmap-distinct", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamListFlatmapDistinct() {
-        return generateJsonResponse(streamFlatmapDistinct.execute());
+        return GenerateJsonResponse.execute(streamFlatmapDistinct.execute());
     }
 
     @GetMapping(value = "/flat-map-generate-map", produces = MediaType.APPLICATION_JSON_VALUE)
     public String flatMapGenerateMap() {
-        return generateJsonResponse(flatMapGenerateMapWithProjectFilesService.execute());
+        return GenerateJsonResponse.execute(flatMapGenerateMapWithProjectFilesService.execute());
     }
 
     @GetMapping(value = "/parallel-pipeline", produces = MediaType.APPLICATION_JSON_VALUE)
     public String parallelPipeline() {
-        return generateJsonResponse(parallelPipelineService.execute());
+        return GenerateJsonResponse.execute(parallelPipelineService.execute());
     }
 
     @GetMapping(value = "/parallel-pipeline-measure-time", produces = MediaType.APPLICATION_JSON_VALUE)
     public String parallelPipelineMeasureTime() {
-        return generateJsonResponse(parallelPipelineMeasureTimeService.execute());
-    }
-
-    private String generateJsonResponse(Object obj) {
-        ObjectWriter objWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
-        try {
-            return objWriter.writeValueAsString(obj);
-        } catch (JsonProcessingException e) {
-            return e.getMessage();
-        }
+        return GenerateJsonResponse.execute(parallelPipelineMeasureTimeService.execute());
     }
 }

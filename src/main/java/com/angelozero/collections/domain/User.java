@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 @Builder
 @Data
