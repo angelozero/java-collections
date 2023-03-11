@@ -1,6 +1,7 @@
 package com.angelozero.collections.service.store;
 
 import com.angelozero.collections.domain.store.MasterStore;
+import com.angelozero.collections.domain.store.Store;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,12 +9,14 @@ import java.util.List;
 @Service
 public class GetConsolidatedInformation {
 
-    public List<MasterStore> execute() {
+    public List<List<Store>> execute() {
+
 
         List<MasterStore> masterStoreList = GenetareMasterStores.execute();
 
-        System.out.println(masterStoreList);
 
-        return masterStoreList;
+
+
+        return null;
     }
 }
