@@ -1,9 +1,6 @@
 package com.angelozero.collections.entrypoint;
 
 import com.angelozero.collections.service.*;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
@@ -39,112 +36,112 @@ public class CollectionController {
 
     @GetMapping(value = "/for", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getFor() {
-        return GenerateJsonResponse.execute(forService.execute());
+        return ZGenerateJsonResponse.execute(forService.execute());
     }
 
     @GetMapping(value = "/for-each", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getForEach() {
-        return GenerateJsonResponse.execute(forEachService.execute());
+        return ZGenerateJsonResponse.execute(forEachService.execute());
     }
 
     @GetMapping(value = "/custom-functional-interface", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getCustomFunctionalInterface(@PathParam("name") String name) {
-        return GenerateJsonResponse.execute(customFunctionalInterfaceService.execute(name));
+        return ZGenerateJsonResponse.execute(customFunctionalInterfaceService.execute(name));
     }
 
     @GetMapping(value = "/remove-if", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getCustomFunctionalInterface() {
-        return GenerateJsonResponse.execute(removeIfService.execute());
+        return ZGenerateJsonResponse.execute(removeIfService.execute());
     }
 
     @GetMapping(value = "/comparator-sorted-list-by-names", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getSortedListByNamesUsingComparator() {
-        return GenerateJsonResponse.execute(comparatorSortedListByNameService.execute());
+        return ZGenerateJsonResponse.execute(comparatorSortedListByNameService.execute());
     }
 
     @GetMapping(value = "/comparator-sorted-list-by-points", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getSortedListByPointsUsingComparator() {
-        return GenerateJsonResponse.execute(comparatorSortedListByPointsService.execute());
+        return ZGenerateJsonResponse.execute(comparatorSortedListByPointsService.execute());
     }
 
     @GetMapping(value = "/comparator-natural-order", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getSortedStringListUsingComparatorNaturalOrder() {
-        return GenerateJsonResponse.execute(naturalOrderService.execute());
+        return ZGenerateJsonResponse.execute(naturalOrderService.execute());
     }
 
     @GetMapping(value = "/method-reference-set-all-as-admin", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceSetAllUsersAsAdmin() {
-        return GenerateJsonResponse.execute(setAdminAllUsersService.execute(false));
+        return ZGenerateJsonResponse.execute(setAdminAllUsersService.execute(false));
     }
 
     @GetMapping(value = "/method-reference-null-last", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceNullLast() {
-        return GenerateJsonResponse.execute(nullLastService.execute());
+        return ZGenerateJsonResponse.execute(nullLastService.execute());
     }
 
     @GetMapping(value = "/method-reference-null-first", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceNullFirst() {
-        return GenerateJsonResponse.execute(nullFirstService.execute());
+        return ZGenerateJsonResponse.execute(nullFirstService.execute());
     }
 
     @GetMapping(value = "/method-reference-constructor", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceConstructor() {
-        return GenerateJsonResponse.execute(methodReferenceConstructorService.execute());
+        return ZGenerateJsonResponse.execute(methodReferenceConstructorService.execute());
     }
 
     @GetMapping(value = "/method-reference-constructor-parameter", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceConstructorParameter() {
-        return GenerateJsonResponse.execute(methodReferenceConstructorParameterService.execute());
+        return ZGenerateJsonResponse.execute(methodReferenceConstructorParameterService.execute());
     }
 
     @GetMapping(value = "/method-reference-constructor-parameter-bi-function", produces = MediaType.APPLICATION_JSON_VALUE)
     public String methodReferenceConstructorParameterBiFunction() {
-        return GenerateJsonResponse.execute(methodReferenceConstructorParameterBiFunctionService.execute());
+        return ZGenerateJsonResponse.execute(methodReferenceConstructorParameterBiFunctionService.execute());
     }
 
     @GetMapping(value = "/stream-and-filter", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamAndFilter() {
-        return GenerateJsonResponse.execute(streamFilterOnlyUsersWithMoreThan25Points.execute());
+        return ZGenerateJsonResponse.execute(streamFilterOnlyUsersWithMoreThan25Points.execute());
     }
 
     @GetMapping(value = "/stream-and-sum", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamAndSum() {
-        return GenerateJsonResponse.execute(streamSumAllPoints.execute());
+        return ZGenerateJsonResponse.execute(streamSumAllPoints.execute());
     }
 
 
     @GetMapping(value = "/stream-and-avarage", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamAndAvarage() {
-        return GenerateJsonResponse.execute(streamAvaragePoints.execute());
+        return ZGenerateJsonResponse.execute(streamAvaragePoints.execute());
     }
 
     @GetMapping(value = "/stream-and-reduce", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamAndReduce() {
-        return GenerateJsonResponse.execute(streamReducePoints.execute());
+        return ZGenerateJsonResponse.execute(streamReducePoints.execute());
     }
 
     @GetMapping(value = "/stream-flatmap", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamListFlatmap() {
-        return GenerateJsonResponse.execute(streamFlatmap.execute());
+        return ZGenerateJsonResponse.execute(streamFlatmap.execute());
     }
 
     @GetMapping(value = "/stream-flatmap-distinct", produces = MediaType.APPLICATION_JSON_VALUE)
     public String streamListFlatmapDistinct() {
-        return GenerateJsonResponse.execute(streamFlatmapDistinct.execute());
+        return ZGenerateJsonResponse.execute(streamFlatmapDistinct.execute());
     }
 
     @GetMapping(value = "/flat-map-generate-map", produces = MediaType.APPLICATION_JSON_VALUE)
     public String flatMapGenerateMap() {
-        return GenerateJsonResponse.execute(flatMapGenerateMapWithProjectFilesService.execute());
+        return ZGenerateJsonResponse.execute(flatMapGenerateMapWithProjectFilesService.execute());
     }
 
     @GetMapping(value = "/parallel-pipeline", produces = MediaType.APPLICATION_JSON_VALUE)
     public String parallelPipeline() {
-        return GenerateJsonResponse.execute(parallelPipelineService.execute());
+        return ZGenerateJsonResponse.execute(parallelPipelineService.execute());
     }
 
     @GetMapping(value = "/parallel-pipeline-measure-time", produces = MediaType.APPLICATION_JSON_VALUE)
     public String parallelPipelineMeasureTime() {
-        return GenerateJsonResponse.execute(parallelPipelineMeasureTimeService.execute());
+        return ZGenerateJsonResponse.execute(parallelPipelineMeasureTimeService.execute());
     }
 }

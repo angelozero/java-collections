@@ -14,6 +14,6 @@ public class StoreController {
 
     @GetMapping(value = "/store-consolidated", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getConsolidatedStores() {
-        return GenerateJsonResponse.execute(getConsolidatedInformation.execute());
+        return ZGenerateJsonResponse.execute(getConsolidatedInformation.execute());
     }
 }

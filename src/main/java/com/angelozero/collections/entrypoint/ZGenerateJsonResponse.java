@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
-public class GenerateJsonResponse {
+public class ZGenerateJsonResponse {
 
     public static String execute(Object obj) {
         ObjectWriter objWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
