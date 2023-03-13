@@ -5,7 +5,10 @@ import com.angelozero.collections.domain.store.Store;
 import com.angelozero.collections.domain.store.SuperStore;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
@@ -29,7 +32,7 @@ public class GetConsolidatedInformation {
                 .superStoreList(Collections
                         .singletonList(
                                 SuperStore.builder()
-                                        .masterName("Final Store Name")
+                                        .name("Final Store Name")
                                         .storeList(storeFinalList)
                                         .build()))
                 .build();

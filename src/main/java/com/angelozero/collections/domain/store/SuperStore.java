@@ -13,6 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 public class SuperStore {
 
-    private String masterName;
+    private String name;
     private List<Store> storeList;
 }

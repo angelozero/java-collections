@@ -18,7 +18,7 @@ public class GenetareMasterStores {
                         .superStoreList(Arrays.asList(
                                 // Super Store 1
                                 SuperStore.builder()
-                                        .masterName("Super Store 1")
+                                        .name("Super Store 1")
                                         .storeList(Arrays.asList(
                                                 Store.builder()
                                                         .code("001")
@@ -38,7 +38,7 @@ public class GenetareMasterStores {
                                         .build(),
                                 // Super Store 2
                                 SuperStore.builder()
-                                        .masterName("Super Store 2")
+                                        .name("Super Store 2")
                                         .storeList(Arrays.asList(
                                                 Store.builder()
                                                         .code("001")
@@ -63,7 +63,7 @@ public class GenetareMasterStores {
                         .superStoreList(Arrays.asList(
                                 // Super Store 1
                                 SuperStore.builder()
-                                        .masterName("Super Store 3")
+                                        .name("Super Store 3")
                                         .storeList(Arrays.asList(
                                                 Store.builder()
                                                         .code("001")
@@ -83,7 +83,7 @@ public class GenetareMasterStores {
                                         .build(),
                                 // Super Store 2
                                 SuperStore.builder()
-                                        .masterName("Super Store 4")
+                                        .name("Super Store 4")
                                         .storeList(Arrays.asList(
                                                 Store.builder()
                                                         .code("001")
