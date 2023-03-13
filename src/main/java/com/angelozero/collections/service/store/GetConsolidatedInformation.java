@@ -2,66 +2,44 @@ package com.angelozero.collections.service.store;
 
 import com.angelozero.collections.domain.store.MasterStore;
 import com.angelozero.collections.domain.store.Store;
+import com.angelozero.collections.domain.store.SuperStore;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 
 @Service
 public class GetConsolidatedInformation {
 
-    public List<Store> execute() {
-
+    public MasterStore execute() {
 
         List<MasterStore> masterStoreList = GenetareMasterStores.execute();
-
 
         List<Store> storeList = new ArrayList<>();
         List<Store> storeFinalList = new ArrayList<>();
 
-        masterStoreList.forEach(masterStore ->
-                masterStore.getSuperStoreList().forEach(superStore ->
-                        storeList.addAll(superStore.getStoreList()
-                        )
-                )
-        );
+        masterStoreList.forEach(masterStore -> masterStore.getSuperStoreList().forEach(superStore -> storeList.addAll(superStore.getStoreList())));
 
-        List<Store> repeatedValuesList = storeList.stream().filter(store ->
-                        Collections.frequency(storeList, store) > 1)
-                .toList().stream().sorted(Comparator.comparing(Store::getCode)).toList();
-
-        List<Store> nonRepeatedValuesList = storeList.stream().filter(store -> Collections.frequency(storeList, store) == 1).toList();
-
-        ListIterator<Store> iterator = repeatedValuesList.listIterator();
-
-        int soma = repeatedValuesList.stream().filter(storeInfo -> storeInfo.getCode().equals("001")).mapToInt(Store::getValue).sum();
-
-        while (iterator.hasNext()) {
-
-            if (iterator.hasPrevious() && !iterator.previous().getCode().equals(iterator.next().getCode())) {
-                Store storePrev = iterator.previous();
-                storeFinalList.add(Store.builder()
-                        .code(storePrev.getCode())
-                        .name(storePrev.getName())
-                        .value(repeatedValuesList.stream().filter(storeInfo -> storeInfo.getCode().equals(storePrev.getCode())).mapToInt(Store::getValue).sum())
-                        .build());
-
-            } else if (iterator.hasPrevious() && storeFinalList.stream().noneMatch(storeInfo -> storeInfo.getCode().equals(iterator.previous().getCode()))) {
-                Store storePrev = iterator.previous();
-                storeFinalList.add(Store.builder()
-                        .code(storePrev.getCode())
-                        .name(storePrev.getName())
-                        .value(repeatedValuesList.stream().filter(storeInfo -> storeInfo.getCode().equals(storePrev.getCode())).mapToInt(Store::getValue).sum())
-                        .build());
-            } else {
-                Store store = iterator.next() != null ? iterator.next() : iterator.previous();
-                storeFinalList.add(Store.builder()
-                        .code(iterator.next().getCode())
-                        .name(iterator.next().getName())
-                        .value(repeatedValuesList.stream().filter(storeInfo -> storeInfo.getCode().equals(store.getCode())).mapToInt(Store::getValue).sum())
-                        .build());
-            }
+        for (List<Store> storeMapList : storeList.stream().collect(Collectors.groupingBy(Store::getCode)).values()) {
+            storeFinalList.add(sumStores(storeMapList));
         }
 
-        return storeFinalList;
+        return MasterStore.builder()
+                .superStoreList(Collections
+                        .singletonList(
+                                SuperStore.builder()
+                                        .masterName("Final Store Name")
+                                        .storeList(storeFinalList)
+                                        .build()))
+                .build();
+    }
+
+    private Store sumStores(List<Store> storeList) {
+        return storeList.stream()
+                .collect(Collectors.teeing(
+                        Collectors.reducing(BinaryOperator.maxBy(Comparator.comparing(Store::getCode))),
+                        Collectors.summingInt(Store::getValue), (optionalMax, sum) ->
+                                new Store(optionalMax.get().getCode(), optionalMax.get().getName(), sum)));
     }
 }

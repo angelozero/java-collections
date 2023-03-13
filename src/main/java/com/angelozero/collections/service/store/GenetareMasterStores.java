@@ -46,8 +46,8 @@ public class GenetareMasterStores {
                                                         .value(10)
                                                         .build(),
                                                 Store.builder()
-                                                        .code("004")
-                                                        .name("DDD")
+                                                        .code("002")
+                                                        .name("BBB")
                                                         .value(40)
                                                         .build(),
                                                 Store.builder()
